@@ -1,0 +1,26 @@
+{
+  "compilerOptions": { //All settings inside compilerOptions control how TypeScript compiles your code.
+    "rootDir": "./src", // My source code lives inside the src folder.
+    "outDir": "./dist",  // I want the compiled JavaScript files to be output to the dist folder.
+
+    "module": "nodenext", // nodenext tells TypeScript: Follow modern Node.js ESM/CommonJS rules.
+    "moduleResolution": "nodenext", // Controls how imports are found. nodenext uses Node's latest resolution strategy. import { helper } from "./helper.js";
+    "target": "ES2020", // I want to use modern JavaScript features available in ES2020.
+
+    "lib": ["ES2020"], // I want to include the standard library features from ES2020, like Promise.allSettled and BigInt.
+    "types": ["node"], // Loads Node.js type definitions. such as process, Buffer, and setTimeout.
+
+    "sourceMap": false, // Controls .map file generation. If true: index.js index.js.map are generated. Useful for debugging.
+    "declaration": false, //Controls generation of .d.ts files. 
+    "declarationMap": false, // Creates source maps for .d.ts files. Useful for library authors. Not usually needed in applications.
+
+    "strict": true, // Enables all strict type checking. eg. noImplicitAny, strictNullChecks, strictFunctionTypes, etc. This is recommended for better type safety.
+    "skipLibCheck": true, // Skips type checking of declaration files (.d.ts). This can speed up compilation, especially in projects with many dependencies.
+
+    "esModuleInterop":true, // Enables compatibility with CommonJS modules. Allows default imports from modules that don't have a default export. For example: import express from "express"; instead of import * as express from "express";
+    "resolveJsonModule": true, // Allows importing JSON files as modules. For example: import config from "./config.json"; TypeScript will understand the shape of the imported JSON.
+
+    "noUncheckedIndexedAccess": true, // Makes array/object access safer.
+    "exactOptionalPropertyTypes": true // Makes optional properties behave more precisely.
+  }
+}
