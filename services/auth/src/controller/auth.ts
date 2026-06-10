@@ -23,9 +23,9 @@ export const loginUser = TryCatch(async(req,res)=>{ //this whole function is pas
         });
     }
     
-    const token = jwt.sign({ user }, process.env.JWT_SECRET as string, { expiresIn: '2D' });
+    const token = jwt.sign({ user }, process.env.JWT_SECRET as string, { expiresIn: '2D' }); // making a token with whole user info ( not only the ID) and secret key, expires in 2 days.
 
 
     await user.save();
-    res.status(200).json({ message: "User logged in successfully", token, user });
+    res.status(200).json({ message: "User logged in successfully", user, token });
 })
