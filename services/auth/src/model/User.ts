@@ -13,7 +13,7 @@ const schema : Schema<IUser> = new Schema({ // Schema<IUser>  -->> This schema s
     name: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     image: {type: String, required: true},
-    role: {type: String, required: true, default: null},
+    role: {type: String, default: null},
 },{
     timestamps: true
 })
